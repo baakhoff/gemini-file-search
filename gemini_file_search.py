@@ -53,7 +53,7 @@ def upload_file_to_store(client: genai.Client, file_path: str, store_name: str, 
     # Wait for the operation to complete
     print("Waiting for upload and indexing to complete...")
     while not operation.done:
-        time.sleep(5)
+        time.sleep(0.1)
         operation = client.operations.get(operation)
         print(".", end="", flush=True)
     print("\nUpload and import complete.")
